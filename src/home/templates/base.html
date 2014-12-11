@@ -34,23 +34,32 @@
 
 <body>
     <!-- Contact Modal -->
-    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3 id="myModalLabel">Contacta conmigo</h3>
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="exampleModalLabel">Contacta conmigo</h4>
           </div>
           <div class="modal-body">
-            <form class="form-horizontal col-sm-12">
-              <div class="form-group"><label>Nombre</label><input class="form-control required" placeholder="Tu nombre" data-placement="top" data-trigger="manual" data-content="a" type="text"></div>
-              <div class="form-group"><label>Mensaje</label><textarea class="form-control" placeholder="Tu mensaje" data-placement="top" data-trigger="manual"></textarea></div>
-              <div class="form-group"><label>E-Mail</label><input class="form-control email" placeholder="email@you.com (donde quieras que te contacte)" data-placement="top" data-trigger="manual" data-content="Necesitamos un email válido (user@gmail.com)" type="text"></div>
-              <div class="form-group"><button type="submit" class="btn btn-success pull-right">Envía!</button> <p class="help-block pull-left text-danger hide" id="form-error">&nbsp; El formulario no es válido. </p></div>
+            <form role="form">
+              <div class="form-group">
+                <label for="nombre" class="control-label">Tu nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="email" class="control-label">Tu email</label>
+                <input type="text" class="form-control" id="email" name="email" placeholder="email@domino.com">
+              </div>
+              <div class="form-group">
+                <label for="mensaje" class="control-label">Mensaje</label>
+                <textarea class="form-control" id="mensaje" name="mensaje"></textarea>
+              </div>
             </form>
           </div>
           <div class="modal-footer">
-            <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary">Enviar</button>
           </div>
         </div>
       </div>
