@@ -26,6 +26,8 @@ class Base(CachesMixin, DatabasesMixin, PathsMixin, LogsMixin, SecurityMixin,
         'django_extensions',
         'apconf',
         'raven.contrib.django.raven_compat',
+        'crispy_forms',
+        'floppyforms',
         'captcha',
         'compressor',
         'home',
@@ -73,7 +75,7 @@ class Base(CachesMixin, DatabasesMixin, PathsMixin, LogsMixin, SecurityMixin,
     APP_SLUG = opts.get('APP_SLUG', '')
     TEMPLATE_DIRS = ('templates', )
 
-    # CRISPY_TEMPLATE_PACK = 'bootstrap3'
+    CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
     # Django toolbar
     INTERNAL_IPS = ['127.0.0.1']
@@ -84,8 +86,10 @@ class Base(CachesMixin, DatabasesMixin, PathsMixin, LogsMixin, SecurityMixin,
 
     # Captcha
     RECAPTCHA_PUBLIC_KEY = opts.get("RECAPTCHA_PUBLIC_KEY",
-                                    "6Ld9r-cSAAAAAN5UTgUFF5G2U31AmltZJTYwRX11")
+                                    "6LdnTNQSAAAAAEE1hF9NIPAsfCjWNKRR_VhuikXj")
     RECAPTCHA_PRIVATE_KEY = opts.get("RECAPTCHA_PRIVATE_KEY",
-                                     "6Ld9r-cSAAAAAE_ijhjnXtX8rFtlKj0Xrp2VNaOd")
+                                     "6LdnTNQSAAAAACJnL88W5iOa1l2tlfqEGc-BBsCG")
 
     RECAPTCHA_USE_SSL = True
+
+    LIST_OF_EMAIL_RECIPIENTS = 'edu@eduherraiz.com'
