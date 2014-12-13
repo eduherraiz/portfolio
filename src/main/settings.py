@@ -92,6 +92,6 @@ class Base(CachesMixin, DatabasesMixin, PathsMixin, LogsMixin, SecurityMixin,
 
     RECAPTCHA_USE_SSL = True
 
-    EMAIL_FROM = 'no-reply@eduherraiz.com'
-    LIST_OF_EMAIL_RECIPIENTS = 'gshark@gmail.com'
+    EMAIL_FROM = opts.get("EMAIL_FROM", "no-reply@domain.com")
+    LIST_OF_EMAIL_RECIPIENTS = opts.get("LIST_OF_EMAIL_RECIPIENTS", "myemail@mydomain.com")
 

@@ -1,11 +1,14 @@
 [Base]
-APP_SLUG                = eduherraiz
+APP_SLUG                = portfolio
+EMAIL_FROM              = no-reply@mydomain.com
+LIST_OF_EMAIL_RECIPIENTS = myemail@mydomain.com
+
 
 [Paths]
-MEDIA_ROOT              = /tmp/eduherraiz-media
-APP_ROOT                = /home/edu/Proyectos/eduherraiz/src
+MEDIA_ROOT              = /tmp/portfolio-media
+APP_ROOT                = /home/user/workspace/portfolio/src
 MEDIA_URL               = /media/
-STATIC_ROOT             = /tmp/eduherraiz-static
+STATIC_ROOT             = /tmp/portfolio-static
 STATIC_URL              = /static/
 
 [Cache]
@@ -15,11 +18,11 @@ CACHE_REDIS_DB          = 5
 REDIS_PORT              = 6379
 CACHE_MAX_ENTRIES       = 10000
 CACHE_TIMEOUT           = 3600
-CACHE_PREFIX            = eduherraiz_
+CACHE_PREFIX            = portfolio_
 
 [Logs]
 LOG_LEVEL               = INFO
-LOG_FILE                = /tmp/eduherraiz.log
+LOG_FILE                = /tmp/portfolio.log
 SENTRY_DSN              =
 SENTRY_ENABLED          = False
 DJANGO_LOG_LEVEL        = ERROR
