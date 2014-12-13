@@ -63,6 +63,16 @@ a.btn-cta-primary,
   font-weight: 600;
   text-transform: uppercase;
 }
+a.btn-cta-success,
+.btn-cta-success {
+  background: #FFAC53;
+  border: 1px solid #FFAC53;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+
 a.btn-cta-primary:hover,
 .btn-cta-primary:hover {
   background: #49ac43;

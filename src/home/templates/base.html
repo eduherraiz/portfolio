@@ -54,6 +54,7 @@
     </div>
 </div>
 
+
 <!-- ******HEADER****** -->
 <header class="header">
     <div class="container">
@@ -80,8 +81,8 @@
             </ul>
         </div>
         <!--//profile-->
-        <a class="btn btn-cta-primary pull-right" href="#myModal" role="button" data-toggle="modal"><i
-                class="fa fa-paper-plane"></i> Contacta conmigo</a>
+        <a class="btn btn-cta-{% if messages %}success{% else %}primary{% endif %} pull-right" href="#myModal" role="button" data-toggle="modal"><i
+                class="fa fa-paper-plane"></i>{% if messages %}{% for message in messages %}{{message}}{%endfor%}{%else%}Contacta conmigo{% endif %}</a>
     </div>
     <!--//container-->
 </header>
