@@ -544,3 +544,7 @@ iframe {
     width: 1360px;
   }
 }
+
+.asteriskField {
+    display: none;
+}
