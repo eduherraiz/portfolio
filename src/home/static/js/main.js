@@ -51,9 +51,52 @@ jQuery(document).ready(function($) {
         
         }
     );
-    
-    /* Github Activity Feed - https://github.com/caseyscarborough/github-activity */
-//    GitHubActivity.feed({ username: "eduherraiz", selector: "#ghfeed" });
 
+    var words = ["Informático interdisciplinar", "Sistemas GNU/Linux", "Python", "Software Libre", "Pescador"];
+    var initial = true;
+    var listTicker = function(options) {
+
+        var defaults = {
+            list: [],
+            startIndex:0,
+            interval: 3 * 1000,
+        }
+
+        var options = $.extend(defaults, options);
+
+        var listTickerInner = function(index) {
+
+            if (options.list.length == 0) return;
+
+            if (!index || index < 0 || index > options.list.length) index = 0;
+
+            var value= options.list[index];
+
+            if (!initial) {
+                options.trickerPanel.fadeOut(function() {
+                    $(this).html(value).fadeIn();
+                });
+            }
+
+            var nextIndex = (index + 1) % options.list.length;
+
+            setTimeout(function() {
+                initial = false;
+                listTickerInner(nextIndex);
+            }, options.interval);
+
+        };
+
+        listTickerInner(options.startIndex);
+    }
+
+    $(function() {
+        listTicker({
+            list: words,
+            startIndex:0,
+            trickerPanel: $('#titulo'),
+            interval: 3 * 1500
+        });
+    });
 
 });
