@@ -2,11 +2,11 @@
 {% spaceless %}
 <!DOCTYPE html>
 <!--[if IE 8]>
-<html lang="en" class="ie8"> <![endif]-->
+<html lang="es" class="ie8"> <![endif]-->
 <!--[if IE 9]>
-<html lang="en" class="ie9"> <![endif]-->
+<html lang="es" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
-<html lang="en"> <!--<![endif]-->
+<html lang="es"> <!--<![endif]-->
 <head>
     <title>Edu Herraiz</title>
     <!-- Meta -->
@@ -24,15 +24,14 @@
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="{% static 'plugins/font-awesome/css/font-awesome.css' %}">
     <!-- github acitivity css -->
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
-    <!--<link rel="stylesheet" href="http://caseyscarborough.github.io/github-activity/github-activity-0.1.0.min.css">-->
+    <link rel="stylesheet" href="{% static 'css/octicons.min.css'%}">
 
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="{% static 'css/styles.css'%}">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js' %}"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js' %}"></script>
+    <script src="{% static 'js/html5shiv.js' %}"></script>
+    <script src="{% static 'js/respond.min.js' %}"></script>
     <![endif]-->
 
 </head>
@@ -254,40 +253,6 @@
     </section>
     <!--//section-->
 
-    <!--<section class="experience section">-->
-    <!--<div class="section-inner">-->
-    <!--<h2 class="heading">Work Experience</h2>-->
-    <!--<div class="content">-->
-    <!--<div class="item">-->
-    <!--<h3 class="title">Co-Founder & Lead Developer - <span class="place"><a href="#">Startup Hub</a></span> <span class="year">(2014 - Present)</span></h3>-->
-    <!--<p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.</p>-->
-    <!--</div>&lt;!&ndash;//item&ndash;&gt;-->
-    <!--<div class="item">-->
-    <!--<h3 class="title">Software Engineer - <span class="place"><a href="#">Google</a></span> <span class="year">(2013 - 2014)</span></h3>-->
-    <!--<p>Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.</p>-->
-    <!--</div>&lt;!&ndash;//item&ndash;&gt;-->
-
-    <!--<div class="item">-->
-    <!--<h3 class="title">Software Engineer - <span class="place"><a href="#">eBay</a></span> <span class="year">(2012 - 2013)</span></h3>-->
-    <!--<p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.</p>-->
-    <!--</div>&lt;!&ndash;//item&ndash;&gt;-->
-
-    <!--</div>&lt;!&ndash;//content&ndash;&gt;-->
-    <!--</div>&lt;!&ndash;//section-inner&ndash;&gt;-->
-    <!--</section>&lt;!&ndash;//section&ndash;&gt;-->
-    <!--<section class="github section">-->
-    <!--<div class="section-inner">-->
-    <!--<h2 class="heading">GitHub</h2>-->
-    <!--&lt;!&ndash;<p>You can embed your GitHub activities using Casey Scarborough's <a href="http://caseyscarborough.com/projects/github-activity/" target="_blank">GitHub Activity Stream</a> widget. You can also take a screenshot of your GitHub chart and put it here for fun.</p>&ndash;&gt;
-    -->
-    <!--&lt;!&ndash;<p><a href="#"><img class="img-responsive" src="{% static 'images/github-chart.png' %}" alt="GitHub Contributions Chart" /></a></p>&ndash;&gt;
-    -->
-    <!--&lt;!&ndash;//Usage: http://caseyscarborough.com/projects/github-activity/ &ndash;&gt;-->
-    <!--<div id="ghfeed" class="ghfeed">-->
-    <!--</div>&lt;!&ndash;//ghfeed&ndash;&gt;-->
-
-    <!--</div>&lt;!&ndash;//secton-inner&ndash;&gt;-->
-    <!--</section>&lt;!&ndash;//section&ndash;&gt;-->
 </div>
 <!--//primary-->
 <div class="secondary col-md-4 col-sm-12 col-xs-12">
@@ -313,104 +278,6 @@
     </aside>
     <!--//aside-->
 
-    <!--<aside class="skills aside section">-->
-    <!--<div class="section-inner">-->
-    <!--<h2 class="heading">Skills</h2>-->
-    <!--<div class="content">-->
-    <!--<p class="intro">-->
-    <!--Intro about your skills goes here. Keep the list lean and only show your primary skillset. You can always provide a link to your Linkedin or Coderwall profile so people can get more info there.</p>-->
-
-    <!--<div class="skillset">-->
-
-    <!--<div class="item">-->
-    <!--<h3 class="level-title">Python &amp; Django<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="You can use the tooltip to add more info...">Expert</span></h3>-->
-    <!--<div class="level-bar">-->
-    <!--<div class="level-bar-inner" data-level="96%">-->
-    <!--</div>-->
-    <!--</div>&lt;!&ndash;//level-bar&ndash;&gt;-->
-    <!--</div>&lt;!&ndash;//item&ndash;&gt;-->
-
-    <!--<div class="item">-->
-    <!--<h3 class="level-title">Javascript &amp; jQuery<span class="level-label">Expert</span></h3>-->
-    <!--<div class="level-bar">-->
-    <!--<div class="level-bar-inner" data-level="96%">-->
-    <!--</div>-->
-    <!--</div>&lt;!&ndash;//level-bar&ndash;&gt;-->
-    <!--</div>&lt;!&ndash;//item&ndash;&gt;-->
-
-    <!--<div class="item">-->
-    <!--<h3 class="level-title">HTML5, CSS3, SASS &amp; LESS<span class="level-label">Expert</span></h3>-->
-    <!--<div class="level-bar">-->
-    <!--<div class="level-bar-inner" data-level="96%">-->
-    <!--</div>-->
-    <!--</div>&lt;!&ndash;//level-bar&ndash;&gt;-->
-    <!--</div>&lt;!&ndash;//item&ndash;&gt;-->
-
-    <!--<div class="item">-->
-    <!--<h3 class="level-title">Ruby on Rails<span class="level-label">Pro</span></h3>-->
-    <!--<div class="level-bar">-->
-    <!--<div class="level-bar-inner" data-level="85%">-->
-    <!--</div>-->
-    <!--</div>&lt;!&ndash;//level-bar&ndash;&gt;-->
-    <!--</div>&lt;!&ndash;//item&ndash;&gt;-->
-
-    <!--<p><a class="more-link" href="#"><i class="fa fa-external-link"></i> More on Coderwall</a></p>-->
-    <!--</div>-->
-    <!--</div>&lt;!&ndash;//content&ndash;&gt;-->
-    <!--</div>&lt;!&ndash;//section-inner&ndash;&gt;-->
-    <!--</aside>&lt;!&ndash;//section&ndash;&gt;-->
-
-    <!--<aside class="testimonials aside section">-->
-    <!--<div class="section-inner">-->
-    <!--<h2 class="heading">Testimonials</h2>-->
-    <!--<div class="content">-->
-    <!--<div class="item">-->
-    <!--<blockquote class="quote">-->
-    <!--<p><i class="fa fa-quote-left"></i>James is an excellent software engineer and he is passionate about what he does. You can totally count on him to deliver your projects!</p>-->
-    <!--</blockquote>-->
-    <!--<p class="source"><span class="name">Tim Adams</span><br /><span class="title">Curabitur commodo</span></p>-->
-    <!--</div>&lt;!&ndash;//item&ndash;&gt;-->
-
-    <!--<p><a class="more-link" href="#"><i class="fa fa-external-link"></i> More on Linkedin</a></p>-->
-
-    <!--</div>&lt;!&ndash;//content&ndash;&gt;-->
-    <!--</div>&lt;!&ndash;//section-inner&ndash;&gt;-->
-    <!--</aside>&lt;!&ndash;//section&ndash;&gt;-->
-
-    <!--<aside class="education aside section">-->
-    <!--<div class="section-inner">-->
-    <!--<h2 class="heading">Education</h2>-->
-    <!--<div class="content">-->
-    <!--<div class="item">-->
-    <!--<h3 class="title"><i class="fa fa-graduation-cap"></i> MSc Psychology and Computer Science</h3>-->
-    <!--<h4 class="university">University College London <span class="year">(2011-2012)</span></h4>-->
-    <!--</div>&lt;!&ndash;//item&ndash;&gt;-->
-    <!--<div class="item">-->
-    <!--<h3 class="title"><i class="fa fa-graduation-cap"></i> BSc Computer Science</h3>-->
-    <!--<h4 class="university">University of Bristol <span class="year">(2008-2011)</span></h4>-->
-    <!--</div>&lt;!&ndash;//item&ndash;&gt;-->
-    <!--</div>&lt;!&ndash;//content&ndash;&gt;-->
-    <!--</div>&lt;!&ndash;//section-inner&ndash;&gt;-->
-    <!--</aside>&lt;!&ndash;//section&ndash;&gt;-->
-
-    <!--<aside class="languages aside section">-->
-    <!--<div class="section-inner">-->
-    <!--<h2 class="heading">Languages</h2>-->
-    <!--<div class="content">-->
-    <!--<ul class="list-unstyled">-->
-    <!--<li class="item">-->
-    <!--<span class="title"><strong>English:</strong></span>-->
-    <!--<span class="level">Native Speaker <br class="visible-xs"/><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>-->
-    <!--</li>&lt;!&ndash;//item&ndash;&gt;-->
-    <!--<li class="item">-->
-    <!--<span class="title"><strong>Spanish:</strong></span>-->
-    <!--<span class="level">Professional Proficiency <br class="visible-sm visible-xs"/><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half"></i></span>-->
-    <!--</li>&lt;!&ndash;//item&ndash;&gt;-->
-    <!--</ul>-->
-    <!--</div>&lt;!&ndash;//content&ndash;&gt;-->
-    <!--</div>&lt;!&ndash;//section-inner&ndash;&gt;-->
-    <!--</aside>&lt;!&ndash;//section&ndash;&gt;-->
-
     <aside class="blog aside section">
         <div class="section-inner">
             <h2 class="heading">Entradas en blog</h2>
@@ -424,52 +291,11 @@
     </aside>
     <!--//section-->
 
-    <!--<aside class="list music aside section">-->
-    <!--<div class="section-inner">-->
-    <!--<h2 class="heading">Favourite coding music</h2>-->
-    <!--<div class="content">-->
-    <!--<ul class="list-unstyled">-->
-    <!--<li><i class="fa fa-headphones"></i> <a href="#">Etiam hendrerit urna nunc</a></li>-->
-    <!--<li><i class="fa fa-headphones"></i> <a href="#">Ut sollicitudin in mauris non auctor</a></li>-->
-    <!--<li><i class="fa fa-headphones"></i> <a href="#">Etiam hendrerit urna nunc</a></li>-->
-    <!--<li><i class="fa fa-headphones"></i> <a href="#">Duis et felis bibendum</a></li>-->
-    <!--</ul>-->
-    <!--</div>&lt;!&ndash;//content&ndash;&gt;-->
-    <!--</div>&lt;!&ndash;//section-inner&ndash;&gt;-->
-    <!--</aside>&lt;!&ndash;//section&ndash;&gt;-->
-
-    <!--<aside class="list conferences aside section">-->
-    <!--<div class="section-inner">-->
-    <!--<h2 class="heading">Conferences</h2>-->
-    <!--<div class="content">-->
-    <!--<ul class="list-unstyled">-->
-    <!--<li><i class="fa fa-calendar"></i> <a href="https://developer.apple.com/wwdc/" target="_blank">WWDC 2014</a> (San Francisco)</li>-->
-    <!--<li><i class="fa fa-calendar"></i> <a href="http://hive.aigaseattle.org/">Hive</a> (Seattle)</li>-->
-    <!--</ul>-->
-    <!--</div>&lt;!&ndash;//content&ndash;&gt;-->
-    <!--</div>&lt;!&ndash;//section-inner&ndash;&gt;-->
-    <!--</aside>&lt;!&ndash;//section&ndash;&gt;-->
-
     <aside class="credits aside section">
         <div class="section-inner">
             <h2 class="heading">Creditos</h2>
 
             <div class="content">
-                <ul class="list-unstyled">
-                    <!--<li><a href="http://getbootstrap.com/" target="_blank"><i class="fa fa-external-link"></i> Bootstrap 3.2</a></li>-->
-                    <!--<li><a href="http://fortawesome.github.io/Font-Awesome/" target="_blank"><i class="fa fa-external-link"></i> FontAwsome 4.1</a></li>-->
-                    <!--<li><a href="http://jquery.com/" target="_blank"><i class="fa fa-external-link"></i> jQuery</a></li>-->
-                    <!--<li><a href="http://caseyscarborough.com/projects/github-activity/" target="_blank"><i class="fa fa-external-link"></i> GitHub Activity Stream</a></li>-->
-
-                    <!--<li><a href="https://github.com/sdepold/jquery-rss" target="_blank"><i class="fa fa-external-link"></i> jQuery RSS</a></li>-->
-
-                    <!--<li>Profile image: <a href="https://www.flickr.com/photos/dotbenjamin/2577394151" target="_blank">Ben Smith</a></li>-->
-                    <!--<li>iPad and iPhone mocks: <a href="https://dribbble.com/perlerar" target="_blank">Regy Perlera</a></li>-->
-
-                </ul>
-
-                <hr/>
-
                 <p>
                     <a href="http://themes.3rdwavemedia.com/website-templates/free-responsive-website-template-for-developers/"
                        target="_blank">Diseño</a> por <a href="https://www.linkedin.com/in/xiaoying" target="_blank">Xiaoying
@@ -507,8 +333,7 @@
 <script type="text/javascript" src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'plugins/jquery-rss/dist/jquery.rss.min.js' %}"></script>
 <!-- github activity plugin -->
-<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
-<!--<script type="text/javascript" src="http://caseyscarborough.github.io/github-activity/github-activity-0.1.0.min.js"></script>-->
+<script type="text/javascript" src="{% static 'js/mustache.min.js'%}"></script>
 <!-- custom js -->
 <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
 
