@@ -27,7 +27,9 @@ class HomeView(SuccessMessageMixin, FormView):
         html_content = message
         msg = EmailMultiAlternatives(subject, text_content, from_email, [to], headers={'Reply-To': form.cleaned_data.get('email')})
         msg.attach_alternative(html_content, "text/html")
-        msg.send()
+
+        if form.cleaned_data.get('suma') == '2':
+            msg.send()
 
         return super(HomeView, self).form_valid(form)
 
