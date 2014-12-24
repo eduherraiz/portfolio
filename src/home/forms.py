@@ -8,8 +8,7 @@ class ContactForm(forms.Form):
     nombre = forms.CharField(required=True)
     email = forms.EmailField(required=True)
     mensaje = forms.CharField(widget=forms.Textarea, required=True)
-    # suma = forms.CharField(required=True,  label='1+1=?', help_text='Mi filtro anti-robots y anti-personas-que-no-quiero-que-contacten')
-    captcha = ReCaptchaField()
+    captcha = ReCaptchaField(required=True)
 
     def __init__(self, *args, **kwargs):
         self.helper = FormHelper()
