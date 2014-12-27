@@ -125,7 +125,6 @@ class Base(CachesMixin, DatabasesMixin, PathsMixin, LogsMixin, SecurityMixin,
     CONSTANCE_CONFIG = {
         'BLOG_NAME' : ("Blog name", u"Blog name"),
         'LOGO' : ( "zinnia_bootstrap/img/zinnia.png", u"Static path for the logo"),
-        "WELCOME": ("Welcome message to the blog", u"Welcome message to the blog"),
     }
 
     CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
