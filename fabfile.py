@@ -42,7 +42,7 @@ prod()
 def update():
     git_pull()
     install_requirements()
-    #django('migrate')
+    django('migrate')
     django('collectstatic --noinput')
     restart()
 

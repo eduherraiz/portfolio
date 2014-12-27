@@ -13,7 +13,7 @@ django-braces==1.4.0
 django-ckeditor==4.4.7
 django-compressor==1.4
 django-configurations==0.8
--e git+https://github.com/APSL/django-constance.git@0b054712d177c5a8bd26929ebcf086e19da094d6#egg=django_constance-master
+django-constance==1.0
 django-contrib-comments==1.5
 django-crispy-forms==1.4.0
 django-extensions==1.4.0
