@@ -26,7 +26,7 @@ jQuery(document).ready(function($) {
     $("#rss-feeds").rss(
     
         //Change this to your own rss feeds
-        "http://www.eduherraiz.com/blog/feed/",
+        "http://www.eduherraiz.com/blog/feeds/",
 
         {
         // how many entries do you want?
