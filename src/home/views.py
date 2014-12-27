@@ -8,7 +8,7 @@ from django.views.generic import FormView
 
 
 from home.forms import ContactForm
-
+from home.models import Personal
 
 class HomeView(SuccessMessageMixin, FormView):
     template_name = 'home.html'
@@ -32,3 +32,7 @@ class HomeView(SuccessMessageMixin, FormView):
 
         return super(HomeView, self).form_valid(form)
 
+    def get_context_data(self, **kwargs):
+        context = super(HomeView, self).get_context_data(**kwargs)
+        context['personal'] = Personal.objects.first()
+        return context

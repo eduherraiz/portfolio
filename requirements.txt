@@ -25,6 +25,7 @@ django-picklefield==0.3.1
 django-recaptcha==1.0.2
 django-tables2==0.15.0
 django-tagging==0.3.4
+django-tinymce==1.5.3
 django-xmlrpc==0.1.5
 ecdsa==0.11
 fabtools==0.19.0

@@ -61,22 +61,31 @@
              alt="Edu Herraiz"/>
 
         <div class="profile-content pull-left">
-            <h1 class="name">Edu Herraiz</h1>
+            <h1 class="name">{{personal.name}}</h1>
 
-            <h2 class="desc" id="titulo">Informático interdisciplinar</h2>
+            <h2 class="desc" id="titulo">{{personal.profession}}</h2>
             <ul class="social list-inline">
-                <li><a href="http://www.linkedin.com/pub/eduardo-herraiz/30/811/27b"><i class="fa fa-linkedin"></i></a>
-                </li>
-                <li><a href="https://twitter.com/eduherraiz"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="https://github.com/eduherraiz"><i class="fa fa-github-alt"></i></a></li>
-                <li><a href="http://es-es.facebook.com/edu.herraizaparicio"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="https://plus.google.com/104861748217559581702/about"><i class="fa fa-google-plus"></i></a>
-                </li>
-                <!--<li><a href="https://speakerdeck.com/eduherraiz"><i class="fa fa-graduation-cap"></i></a></li>-->
-                <li><a href="http://www.youtube.com/user/sharkMallorca"><i class="fa fa-youtube"></i></a></li>
-                <li class="last-item"><a href="http://vimeo.com/user3336866/videos"><i
-                        class="fa fa-vimeo-square"></i></a></li>
-
+                {% if personal.link_linkedin %}
+                <li><a href="{{personal.link_linkedin}}"><i class="fa fa-linkedin"></i></a></li>
+                {% endif %}
+                {% if personal.link_twitter %}
+                <li><a href="{{personal.link_twitter}}"><i class="fa fa-twitter"></i></a></li>
+                {% endif %}
+                {% if personal.link_github %}
+                <li><a href="{{personal.link_github}}"><i class="fa fa-github-alt"></i></a></li>
+                {% endif %}
+                {% if personal.link_facebook %}
+                <li><a href="{{personal.link_facebook}}"><i class="fa fa-facebook"></i></a></li>
+                {% endif %}
+                {% if personal.link_googleplus %}
+                <li><a href="{{personal.link_googleplus}}"><i class="fa fa-google-plus"></i></a></li>
+                {% endif %}
+                {% if personal.link_youtube %}
+                <li><a href="{{personal.link_youtube}}"><i class="fa fa-youtube"></i></a></li>
+                {% endif %}
+                {% if personal.link_vimeo %}
+                <li class="last-item"><a href="{{personal.link_vimeo}}"><i class="fa fa-vimeo-square"></i></a></li>
+                {% endif %}
             </ul>
         </div>
         <!--//profile-->
@@ -98,15 +107,7 @@
             <h2 class="heading">Sobre mí</h2>
 
             <div class="content">
-                <p>Soy informático de profesión y un <a href="http://www.pescandoenmallorca.com">fanático pescador</a>
-                    con la suerte de vivir en una isla.<br/>
-                    Actualmente estoy trabajando como administrador de sistemas y programador de multitud de proyectos
-                    web en <a href='http://www.apsl.net'>apsl.net</a>.<br/>
-                    Como programador me gusta Python y llevo varios desarrollos propios en Django. Como administrador de
-                    sistemas me gusta GNU/Linux e intento defender el software libre.<br/>
-                    Estoy abierto a nuevas experiencias y retos, tanto laborales como personales. No dudes en <a
-                            href="#myModal" role="button" data-toggle="modal">contactar</a> conmigo o buscarme por las
-                    redes sociales para comunicarnos.</p>
+                {{personal.welcome_message|safe}}
             </div>
             <!--//content-->
         </div>
@@ -263,13 +264,12 @@
             <div class="content">
                 <ul class="list-unstyled">
                     <li><i class="fa fa-map-marker"></i><span class="sr-only">Location:</span><a
-                            href="https://www.google.es/maps/place/Mallorca,+Islas+Baleares/@39.6134979,2.911652,10z/data=!3m1!4b1!4m2!3m1!1s0x1297b8766606c129:0xb7eb9bff02d2ecc0">Mallorca</a>,
-                        ES
+                            href="{{personal.link_location}}">{{personal.location}}</a>
                     </li>
-                    <li><i class="fa fa-envelope-o"></i><span class="sr-only">Email:</span><a href="#contacta">edu@eduherraiz.com</a>
+                    <li><i class="fa fa-envelope-o"></i><span class="sr-only">Email:</span><a href="#myModal" role="button" data-toggle="modal">{{personal.email}}</a>
                     </li>
                     <li><i class="fa fa-link"></i><span class="sr-only">Website:</span><a
-                            href="http://www.eduherraiz.com">http://www.eduherraiz.com</a></li>
+                            href="{{personal.webiste}}">{{personal.website}}</a></li>
                 </ul>
             </div>
             <!--//content-->
@@ -318,10 +318,7 @@
 <!-- ******FOOTER****** -->
 <footer class="footer">
     <div class="container text-center">
-        <small class="copyright">Programando con <i class="fa fa-heart"></i> desde hace ya mucho tiempo y sin copyright.<br>
-            Encuentra el código de esta web en <a href="https://github.com/eduherraiz/portfolio">github</a>.
-        </small>
-    </div>
+        <small class="copyright">{{personal.footer|safe}}</div>
     <!--//container-->
 </footer>
 <!--//footer-->
@@ -345,16 +342,7 @@ $( document ).ready( function() {
 {% endif %}
 
 <!-- Analytics -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-22166003-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
+{{personal.analytics_code|safe}}
 
 </body>
 </html>
