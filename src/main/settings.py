@@ -23,7 +23,9 @@ class Base(CachesMixin, DatabasesMixin, PathsMixin, LogsMixin, SecurityMixin,
         'django.contrib.sessions',
         'django.contrib.messages',
         'django.contrib.staticfiles',
+        'django.contrib.sites',
         'django_extensions',
+        'zinnia_bootstrap',
         'apconf',
         'raven.contrib.django.raven_compat',
         'crispy_forms',
@@ -31,6 +33,14 @@ class Base(CachesMixin, DatabasesMixin, PathsMixin, LogsMixin, SecurityMixin,
         'captcha',
         'compressor',
         'home',
+        'django_comments',
+        'tagging',
+        'mptt',
+        'ckeditor',
+        'zinnia',
+        'zinnia_ckeditor',
+        'constance',
+        'constance.backends.database',
     )
 
     MIDDLEWARE_CLASSES = (
@@ -52,7 +62,16 @@ class Base(CachesMixin, DatabasesMixin, PathsMixin, LogsMixin, SecurityMixin,
         'django.core.context_processors.debug',
         'django.core.context_processors.tz',
         'django.contrib.messages.context_processors.messages',
+        'zinnia.context_processors.version',  # Optional
+        'django.core.context_processors.request',
+        'constance.context_processors.config',
     )
+
+    TEMPLATE_LOADERS = (
+         'app_namespace.Loader',
+         'django.template.loaders.filesystem.Loader',
+         'django.template.loaders.app_directories.Loader',
+     )
 
     ROOT_URLCONF = 'main.urls'
 
@@ -95,3 +114,18 @@ class Base(CachesMixin, DatabasesMixin, PathsMixin, LogsMixin, SecurityMixin,
     EMAIL_FROM = opts.get("EMAIL_FROM", "no-reply@domain.com")
     LIST_OF_EMAIL_RECIPIENTS = opts.get("LIST_OF_EMAIL_RECIPIENTS", "myemail@mydomain.com")
 
+    CKEDITOR_UPLOAD_PATH = "uploads/"
+
+    CONSTANCE_CONNECTION = {
+        'host': 'localhost',
+        'port': 6379,
+        'db': 0,
+    }
+
+    CONSTANCE_CONFIG = {
+        'BLOG_NAME' : ("Blog name", u"Blog name"),
+        'LOGO' : ( "zinnia_bootstrap/img/zinnia.png", u"Static path for the logo"),
+        "WELCOME": ("Welcome message to the blog", u"Welcome message to the blog"),
+    }
+
+    CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
