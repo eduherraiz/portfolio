@@ -17,6 +17,7 @@ class Base(CachesMixin, DatabasesMixin, PathsMixin, LogsMixin, SecurityMixin,
     BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
     INSTALLED_APPS = (
+        'modeltranslation',
         'django.contrib.admin',
         'django.contrib.auth',
         'django.contrib.contenttypes',
@@ -78,14 +79,14 @@ class Base(CachesMixin, DatabasesMixin, PathsMixin, LogsMixin, SecurityMixin,
 
     WSGI_APPLICATION = 'main.wsgi.application'
 
+    gettext = lambda s: s
     LANGUAGES = (
-        ('ca', 'Català'),
-        ('es', 'Castellano'),
+        ('es', gettext('Castellano')),
+        ('ca', gettext('Català')),
+        ('en', gettext('English')),
     )
 
-    LANGUAGE_CODE = 'ca'
-
-    gettext = lambda s: s
+    LANGUAGE_CODE = 'es'
 
     TIME_ZONE = 'Europe/Madrid'
     USE_I18N = True
@@ -131,11 +132,11 @@ class Base(CachesMixin, DatabasesMixin, PathsMixin, LogsMixin, SecurityMixin,
     CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
 
     CKEDITOR_CONFIGS = {
-    'default': {
-        'toolbar': 'Full',
-        'height': 300,
-        'width': '100%',
-        'removePlugins': 'stylesheetparser',
-        'allowedContent': True,
-    },
-}
+        'default': {
+            'toolbar': 'Full',
+            'height': 300,
+            'width': '100%',
+            'removePlugins': 'stylesheetparser',
+            'allowedContent': True,
+        },
+    }

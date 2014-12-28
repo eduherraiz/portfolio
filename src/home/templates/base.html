@@ -53,7 +53,7 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
                         class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Contacta conmigo</h4>
+                <h4 class="modal-title" id="exampleModalLabel">{% trans 'Contacta conmigo' %}</h4>
             </div>
             <div class="modal-body">
                 {% crispy form form.helper %}
@@ -67,7 +67,7 @@
 <header class="header">
     <div class="container">
         <img class="profile-image img-responsive pull-left" src="{% static 'images/avatar-180.png' %}"
-             alt="Edu Herraiz"/>
+             alt="{{personal.name}}"/>
 
         <div class="profile-content pull-left">
             <h1 class="name">{{personal.name}}</h1>
@@ -99,7 +99,7 @@
         </div>
         <!--//profile-->
         <a class="btn btn-cta-{% if messages %}success{% else %}primary{% endif %} pull-right" href="#myModal" role="button" data-toggle="modal"><i
-                class="fa fa-paper-plane"></i>{% if messages %}{% for message in messages %}{{message}}{%endfor%}{%else%}Contacta conmigo{% endif %}</a>
+                class="fa fa-paper-plane"></i>{% if messages %}{% for message in messages %}{{message}}{%endfor%}{%else%}{% trans 'Contacta conmigo'%}{% endif %}</a>
     </div>
     <!--//container-->
 </header>
@@ -113,7 +113,7 @@
 <div class="primary col-md-8 col-sm-12 col-xs-12">
     <section class="about section">
         <div class="section-inner">
-            <h2 class="heading">Sobre mí</h2>
+            <h2 class="heading">{% trans 'Sobre mí' %}</h2>
 
             <div class="content">
                 {{personal.welcome_message|safe}}
@@ -126,7 +126,7 @@
 
     <section class="latest section">
         <div class="section-inner">
-            <h2 class="heading">Últimos proyectos</h2>
+            <h2 class="heading">{% trans 'Últimos proyectos' %}</h2>
 
             <div class="content">
 
@@ -170,9 +170,9 @@
                         <h3 class="title"><a href="{{ project.url }}" target="_blank">{{ project.name }}</a></h3>
                         {{ project.short_description|safe }}
                         <p><a class="more-link" href="{{ project.url }}" target="_blank"><i
-                                class="fa fa-external-link"></i> Lee más</a>
+                                class="fa fa-external-link"></i> {% trans 'Lee más' %}</a>
                         {% if project.free_code_url %}
-                        - <a href="{{ project.free_code_url }}"><span class="label label-theme">Código libre</span></a>
+                        - <a href="{{ project.free_code_url }}"><span class="label label-theme">{% trans 'Código libre' %}</span></a>
                         {% endif %}
                         </p>
                     </div>
@@ -194,7 +194,7 @@
 
     <section class="projects section">
         <div class="section-inner">
-            <h2 class="heading">Proyectos viejos</h2>
+            <h2 class="heading">{% trans 'Proyectos viejos' %}</h2>
 
             <div class="content">
 
@@ -209,9 +209,9 @@
                     <div class="summary">{{ project.short_description|safe }}</div>
 
                         <p><a class="more-link" href="{{ project.url }}" target="_blank"><i
-                                class="fa fa-external-link"></i> Lee más</a>
+                                class="fa fa-external-link"></i> {% trans 'Lee más' %}</a>
                         {% if project.free_code_url %}
-                        - <a href="{{ project.free_code_url }}"><span class="label label-theme">Código libre</span></a>
+                        - <a href="{{ project.free_code_url }}"><span class="label label-theme">{% trans 'Código libre' %}</span></a>
                         {% endif %}
                 </div>
 
@@ -232,7 +232,7 @@
 <div class="secondary col-md-4 col-sm-12 col-xs-12">
     <aside class="info aside section">
         <div class="section-inner">
-            <h2 class="heading sr-only">Información básica</h2>
+            <h2 class="heading sr-only">{% trans 'Información básica' %}</h2>
 
             <div class="content">
                 <ul class="list-unstyled">
@@ -253,7 +253,7 @@
 
     <aside class="blog aside section">
         <div class="section-inner">
-            <h2 class="heading">Entradas en blog</h2>
+            <h2 class="heading">{% trans 'Entradas en blog' %}</h2>
             <div id="rss-feeds" class="content">
 
             </div>
@@ -265,13 +265,13 @@
 
     <aside class="credits aside section">
         <div class="section-inner">
-            <h2 class="heading">Creditos</h2>
+            <h2 class="heading">{% trans 'Créditos' %}</h2>
 
             <div class="content">
                 <p>
                     <a href="http://themes.3rdwavemedia.com/website-templates/free-responsive-website-template-for-developers/"
-                       target="_blank">Diseño</a> por <a href="https://www.linkedin.com/in/xiaoying" target="_blank">Xiaoying
-                    Riley</a> con <a class="dotted-link" href="http://creativecommons.org/licenses/by/3.0/"
+                       target="_blank">{% trans 'Diseño'%}</a> {% trans "por" %} <a href="https://www.linkedin.com/in/xiaoying" target="_blank">Xiaoying
+                    Riley</a> {% trans 'con' %} <a class="dotted-link" href="http://creativecommons.org/licenses/by/3.0/"
                                      target="_blank">CCA 3.0 License</a></p>
 
             </div>

@@ -6,18 +6,23 @@ from models import Profession, Personal, Project
 from ckeditor.widgets import CKEditorWidget
 from django.forms import TextInput
 from django.db import models
+from modeltranslation.admin import TranslationAdmin
 
-class ProfessionAdmin(admin.ModelAdmin):
+class ProfessionAdmin(TranslationAdmin):
     list_display = ('name',)
     list_display_links = ('name',)
 
 class ProjectAdminForm(forms.ModelForm):
-    short_description = forms.CharField(widget=CKEditorWidget(), required=False)
-    long_description = forms.CharField(widget=CKEditorWidget(), required=False)
+    short_description_es = forms.CharField(widget=CKEditorWidget(), required=False)
+    short_description_ca = forms.CharField(widget=CKEditorWidget(), required=False)
+    short_description_en = forms.CharField(widget=CKEditorWidget(), required=False)
+    long_description_es = forms.CharField(widget=CKEditorWidget(), required=False)
+    long_description_ca = forms.CharField(widget=CKEditorWidget(), required=False)
+    long_description_en = forms.CharField(widget=CKEditorWidget(), required=False)
     class Meta:
         model = Project
 
-class ProjectAdmin(admin.ModelAdmin):
+class ProjectAdmin(TranslationAdmin):
     list_display = ('name','url', 'type',)
     list_display_links = ('name','url')
     form = ProjectAdminForm
@@ -27,12 +32,16 @@ class ProjectAdmin(admin.ModelAdmin):
     }
 
 class PersonalAdminForm(forms.ModelForm):
-    welcome_message = forms.CharField(widget=CKEditorWidget(), required=False)
-    footer = forms.CharField(widget=CKEditorWidget(), required=False)
+    welcome_message_es = forms.CharField(widget=CKEditorWidget(), required=False)
+    welcome_message_ca = forms.CharField(widget=CKEditorWidget(), required=False)
+    welcome_message_en = forms.CharField(widget=CKEditorWidget(), required=False)
+    footer_es = forms.CharField(widget=CKEditorWidget(), required=False)
+    footer_ca = forms.CharField(widget=CKEditorWidget(), required=False)
+    footer_en = forms.CharField(widget=CKEditorWidget(), required=False)
     class Meta:
         model = Personal
 
-class PersonalAdmin(admin.ModelAdmin):
+class PersonalAdmin(TranslationAdmin):
     list_display = ('name', 'email')
     list_display_links = ('name', 'email')
     form = PersonalAdminForm
