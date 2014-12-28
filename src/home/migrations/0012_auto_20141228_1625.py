@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='project',
             name='type',
-            field=models.CharField(default=b'NOR', max_length=1, choices=[(b'IMP', b'Important'), (b'OLD', b'Old'), (b'NOR', b'Normal')]),
+            field=models.CharField(default=b'NOR', max_length=3, choices=[(b'IMP', b'Important'), (b'OLD', b'Old'), (b'NOR', b'Normal')]),
             preserve_default=True,
         ),
     ]
