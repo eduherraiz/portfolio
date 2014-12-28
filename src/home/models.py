@@ -2,11 +2,18 @@
 
 from django.db import models
 
+class Profession(models.Model):
+    name = models.CharField(blank=True, max_length=300)
+
+    def __unicode__(self):
+        return self.name
+
 class Personal(models.Model):
     name = models.CharField(max_length=50)
     email = models.EmailField()
     description = models.TextField(blank=True)
-    profession = models.CharField(blank=True, max_length=100)
+    professions = models.ManyToManyField(Profession, blank=True)
+    interval_profession = models.IntegerField(blank=True, default=3000)
     link_linkedin = models.URLField(blank=True)
     link_twitter = models.URLField(blank=True)
     link_github = models.URLField(blank=True)
@@ -19,5 +26,10 @@ class Personal(models.Model):
     link_location = models.URLField(blank=True)
     location = models.CharField(blank=True,max_length=50)
     link_blog_rss = models.URLField(blank=True)
+    num_blog_entries = models.IntegerField(blank=True, default=3)
     footer = models.TextField(blank=True)
     analytics_code = models.TextField(blank=True)
+
+
+    def __unicode__(self):
+        return self.name

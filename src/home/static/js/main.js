@@ -21,18 +21,18 @@ jQuery(document).ready(function($) {
     
     /* Bootstrap Tooltip for Skillset */
     $('.level-label').tooltip();
-    
+
     /* jQuery RSS - https://github.com/sdepold/jquery-rss */
     $("#rss-feeds").rss(
     
         //Change this to your own rss feeds
-        "http://www.eduherraiz.com/blog/feeds/",
+        blog_url,
 
         {
         // how many entries do you want?
         // default: 4
         // valid values: any integer
-        limit: 3,
+        limit: blog_entries,
         
         // the effect, which is used to let the entries appear
         // default: 'show'
@@ -52,14 +52,13 @@ jQuery(document).ready(function($) {
         }
     );
 
-    var words = ["Informático interdisciplinar", "Sistemas GNU/Linux", "Python", "Software Libre", "Pescador"];
     var initial = true;
     var listTicker = function(options) {
 
         var defaults = {
             list: [],
             startIndex:0,
-            interval: 3 * 1000,
+            interval: 3000
         }
 
         var options = $.extend(defaults, options);
@@ -95,7 +94,7 @@ jQuery(document).ready(function($) {
             list: words,
             startIndex:0,
             trickerPanel: $('#titulo'),
-            interval: 3 * 1500
+            interval: interval_profession
         });
     });
 
