@@ -130,93 +130,60 @@
 
             <div class="content">
 
+                <!-- important projects -->
+                {% for project in personal.projects.all %}
+                {% if project.type  == 'IMP' %}
                 <div class="item featured text-center">
-                    <h3 class="title"><a href="http://vagi.be" target="_blank">Vagi.be - Webcams geolocalizadas</a></h3>
+                    <h3 class="title"><a href="{{ project.url }}" target="_blank">{{ project.name }}</a></h3>
 
-                    <p class="summary">Un visor de webcams con imágenes del dia e información del tiempo</p>
+                    <div class="summary">{{ project.short_description|safe }}</div>
 
                     <div class="featured-image">
-                        <a href="http://vagi.be" target="_blank">
-                            <img class="img-responsive project-image" src="{% static 'images/projects/vagi-be.png' %}"
-                                 alt="project name"/>
+                        <a href="{{ project.url }}" target="_blank">
+                            <img class="img-responsive project-image" src="{{ project.image.url }}"
+                                 alt="{{ project.name }}"/>
                         </a>
-
                         <div class="ribbon">
                             <div class="text">App</div>
                         </div>
                     </div>
-
                     <div class="desc text-left">
-                        <p>Lo voy desarrollando en ratos libres pero ya puedes ver muchas webcams de todo el mundo y con
-                            su fantástico visor las imágenes del todo un día. Información del tiempo y la fase
-                            lunar.</p>
+                        <p>{{ project.long_description|safe }}</p>
                     </div>
                     <!--//desc-->
                 </div>
+                {% endif %}
+                {% endfor %}
+                <!-- //important projects -->
+
+                <!-- Normal projects -->
+                {% for project in personal.projects.all %}
+                {% if project.type  == 'NOR' %}
                 <!--//item-->
                 <div class="item row">
-                    <a class="col-md-4 col-sm-4 col-xs-12" href="http://www.pescandoenmallorca.com" target="_blank">
-                        <img class="img-responsive project-image" src="{% static 'images/projects/pem.png' %}"
-                             alt="Pescando en Mallorca"/>
+                    <a class="col-md-4 col-sm-4 col-xs-12" href="{{ project.url }}" target="_blank">
+                        <img class="img-responsive project-image" src="{{ project.image.url }}"
+                             alt="{{ project.name }}"/>
                     </a>
 
                     <div class="desc col-md-8 col-sm-8 col-xs-12">
-                        <h3 class="title"><a href="http://www.pescandoenmallorca.com" target="_blank">Pescandoenmallorca.com
-                            - Blog de pesca</a></h3>
-
-                        <p>Blog de tradición familiar, que empezó con las andanzas de nuestro grupo de pesca pero que
-                            ahora es un punto de encuentro de muchos pescadores mallorquines.</p>
-
-                        <p><a class="more-link" href="http://www.pescandoenmallorca.com" target="_blank"><i
-                                class="fa fa-external-link"></i> Lee más</a></p>
-                    </div>
-                    <!--//desc-->
-                </div>
-                <!--//item-->
-
-                <div class="item row">
-                    <a class="col-md-4 col-sm-4 col-xs-12" href="https://pymallorca.org" target="_blank">
-                        <img class="img-responsive project-image" src="{% static 'images/projects/pymallorca.png' %}"
-                             alt="Pymallorca"/>
-                    </a>
-
-                    <div class="desc col-md-8 col-sm-8 col-xs-12">
-                        <h3 class="title"><a href="https://pymallorca.org" target="_blank">Pymallorca - Asociación
-                            python de Mallorca</a></h3>
-
-                        <p>Estoy promoviendo una asociación aún por constituir de los amantes del lenguaje de
-                            programación python en Mallorca. Ya somos muchos apuntados, si te interesa el tema apúntate.
-                            - <a href="https://github.com/pymallorca/pymallorca"><span class="label label-theme">Código libre</span></a>
+                        <h3 class="title"><a href="{{ project.url }}" target="_blank">{{ project.name }}</a></h3>
+                        {{ project.short_description|safe }}
+                        <p><a class="more-link" href="{{ project.url }}" target="_blank"><i
+                                class="fa fa-external-link"></i> Lee más</a>
+                        {% if project.free_code_url %}
+                        - <a href="{{ project.free_code_url }}"><span class="label label-theme">Código libre</span></a>
+                        {% endif %}
                         </p>
-
-                        <p><a class="more-link" href="https://pymallorca.org" target="_blank"><i
-                                class="fa fa-external-link"></i> Lee más</a></p>
                     </div>
                     <!--//desc-->
                 </div>
                 <!--//item-->
+                {% endif %}
+                {% endfor %}
+                <!-- //normal projects -->
 
-                <div class="item row">
-                    <a class="col-md-4 col-sm-4 col-xs-12" href="http://palabras.eduherraiz.com/es/" target="_blank">
-                        <img class="img-responsive project-image" src="{% static 'images/projects/words.png' %}"
-                             alt="Palabras con letras"/>
-                    </a>
 
-                    <div class="desc col-md-8 col-sm-8 col-xs-12">
-                        <h3 class="title"><a href="http://palabras.eduherraiz.com/es/" target="_blank">Palabras - Busca
-                            palabras con letras</a></h3>
-
-                        <p> Un pequeño site que hice para satisfacer mi curiosidad sobre que palabras se pueden formar
-                            con unas determinadas letras. En catalán y castellano. Pruebálo, es adictivo!
-                            - <a href="https://github.com/eduherraiz/words_with_letters"><span
-                                    class="label label-theme">Código libre</span></a></p>
-
-                        <p><a class="more-link" href="http://palabras.eduherraiz.com/es/" target="_blank"><i
-                                class="fa fa-external-link"></i> Lee más</a></p>
-                    </div>
-                    <!--//desc-->
-                </div>
-                <!--//item-->
 
             </div>
             <!--//content-->
@@ -230,31 +197,28 @@
             <h2 class="heading">Proyectos viejos</h2>
 
             <div class="content">
+
+                <!-- OLD projects -->
+                {% for project in personal.projects.all %}
+                {% if project.type  == 'OLD' %}
+                <!--//item-->
                 <div class="item">
                     <h3 class="title"><a
-                            href="http://www.eduherraiz.com/blog/foowill-un-proyecto-inutil-que-no-lo-fue-tanto/">Foowill</a>
-                        - <a href="https://github.com/eduherraiz/foowill"><span
-                                class="label label-theme">Código libre</span></a></h3>
+                            href="{{ project.url }}">{{ project.name }}</a></h3>
 
-                    <p class="summary">Una aplicación web que donde podías guardar mensajes en twitter que se publicarán
-                        cuando mueras.</p>
+                    <div class="summary">{{ project.short_description|safe }}</div>
 
-                    <p><a class="more-link"
-                          href="http://www.eduherraiz.com/blog/foowill-un-proyecto-inutil-que-no-lo-fue-tanto/"
-                          target="_blank"><i class="fa fa-external-link"></i> Lee más</a></p>
+                        <p><a class="more-link" href="{{ project.url }}" target="_blank"><i
+                                class="fa fa-external-link"></i> Lee más</a>
+                        {% if project.free_code_url %}
+                        - <a href="{{ project.free_code_url }}"><span class="label label-theme">Código libre</span></a>
+                        {% endif %}
                 </div>
-                <!--//item-->
-                <div class="item">
-                    <h3 class="title"><a href="http://www.eduherraiz.com/algaidawireless/">Algaida wireless</a></h3>
 
-                    <p class="summary">Una red MAN (Metropolitan Area Network), que iniciamos hace muchos años en el
-                        pueblo de Algaida. Construyendo antenas y nodos.</p>
-
-                    <p><a class="more-link" href="http://www.eduherraiz.com/algaidawireless/" target="_blank"><i
-                            class="fa fa-external-link"></i> Lee más</a></p>
-                </div>
                 <!--//item-->
-                <a class="btn btn-cta-secondary" href="https://github.com/eduherraiz">Más en github</a>
+                {% endif %}
+                {% endfor %}
+                <!-- //old projects -->
 
             </div>
             <!--//content-->
