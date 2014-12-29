@@ -1,6 +1,7 @@
 Django==1.7
 Fabric==1.10.0
 Pillow==2.6.1
+PyMollom==0.1
 Unidecode==0.04.16
 argparse==1.2.1
 args==0.1.0
@@ -39,5 +40,6 @@ raven==5.0.0
 redis==2.10.3
 six==1.8.0
 wsgiref==0.1.2
+zinnia-spam-checker-mollom==1.0
 -e git+https://github.com/Fantomas42/zinnia-theme-bootstrap.git@526342a2fb32ddf1e5eb2a9f13869992eb6f3d23#egg=zinnia_theme_bootstrap-dev
 zinnia-wysiwyg-ckeditor==1.2

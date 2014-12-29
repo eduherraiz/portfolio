@@ -140,3 +140,9 @@ class Base(CachesMixin, DatabasesMixin, PathsMixin, LogsMixin, SecurityMixin,
             'allowedContent': True,
         },
     }
+
+    # Zinnia antispam
+    # Create account in https://mollom.com
+    ZINNIA_SPAM_CHECKER_BACKENDS = ('zinnia_mollom',)
+    MOLLOM_PUBLIC_KEY = opts.get("MOLLOM_PUBLIC_KEY", "")
+    MOLLOM_PRIVATE_KEY = opts.get("MOLLOM_PRIVATE_KEY", "")
