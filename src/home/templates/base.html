@@ -96,10 +96,24 @@
                 <li class="last-item"><a href="{{personal.link_vimeo}}"><i class="fa fa-vimeo-square"></i></a></li>
                 {% endif %}
             </ul>
+
+        <ul class="list-inline">
+        {% for lang in LANGUAGES %}
+            <li>
+            <form name="setLang{{ lang.1 }}" action="/i18n/setlang/" method="POST">{% csrf_token %}
+                <input name="next" type="hidden" value="/" />
+                <input type="hidden" name="language" value="{{ lang.0 }}" />
+                <a href="#" onclick="document.setLang{{ lang.1 }}.submit();return false;"><img src="blank.gif" class="flag flag-{{ lang.0 }}" alt="{{ lang.1 }}" /></a>
+            </form>
+            </li>
+        {% endfor %}
+        </ul>
+
         </div>
         <!--//profile-->
         <a class="btn btn-cta-{% if messages %}success{% else %}primary{% endif %} pull-right" href="#myModal" role="button" data-toggle="modal"><i
                 class="fa fa-paper-plane"></i>{% if messages %}{% for message in messages %}{{message}}{%endfor%}{%else%}{% trans 'Contacta conmigo'%}{% endif %}</a>
+
     </div>
     <!--//container-->
 </header>

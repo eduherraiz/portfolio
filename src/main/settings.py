@@ -118,6 +118,10 @@ class Base(CachesMixin, DatabasesMixin, PathsMixin, LogsMixin, SecurityMixin,
 
     CKEDITOR_UPLOAD_PATH = "uploads/"
 
+    # Zinnia antispam
+    # Create account in https://mollom.com
+    ZINNIA_SPAM_CHECKER_BACKENDS = ('zinnia_mollom',)
+
     CONSTANCE_CONNECTION = {
         'host': 'localhost',
         'port': 6379,
@@ -127,6 +131,9 @@ class Base(CachesMixin, DatabasesMixin, PathsMixin, LogsMixin, SecurityMixin,
     CONSTANCE_CONFIG = {
         'BLOG_NAME' : ("Blog name", u"Blog name"),
         'LOGO' : ( "zinnia_bootstrap/img/zinnia.png", u"Static path for the logo"),
+        'MOLLOM_PUBLIC_KEY': ( "", u"Anti-spam mollom.com public key"),
+        'MOLLOM_PRIVATE_KEY': ( "", u"Anti-spam mollom.com private key"),
+
     }
 
     CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
@@ -141,8 +148,3 @@ class Base(CachesMixin, DatabasesMixin, PathsMixin, LogsMixin, SecurityMixin,
         },
     }
 
-    # Zinnia antispam
-    # Create account in https://mollom.com
-    ZINNIA_SPAM_CHECKER_BACKENDS = ('zinnia_mollom',)
-    MOLLOM_PUBLIC_KEY = opts.get("MOLLOM_PUBLIC_KEY", "")
-    MOLLOM_PRIVATE_KEY = opts.get("MOLLOM_PRIVATE_KEY", "")
