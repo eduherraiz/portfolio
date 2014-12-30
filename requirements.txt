@@ -31,6 +31,7 @@ django-tinymce==1.5.3
 django-xmlrpc==0.1.5
 ecdsa==0.11
 fabtools==0.19.0
+oauthlib==0.7.2
 paramiko==1.15.1
 psycopg2==2.5.4
 pycrypto==2.6.1
@@ -38,8 +39,12 @@ pyparsing==2.0.3
 pytz==2014.10
 raven==5.0.0
 redis==2.10.3
-six==1.8.0
+requests==2.4.3
+requests-oauthlib==0.4.1
+six==1.7.3
+tweepy==3.1.0
 wsgiref==0.1.2
 zinnia-spam-checker-mollom==1.0
 -e git+https://github.com/Fantomas42/zinnia-theme-bootstrap.git@526342a2fb32ddf1e5eb2a9f13869992eb6f3d23#egg=zinnia_theme_bootstrap-dev
+zinnia-twitter==1.0
 zinnia-wysiwyg-ckeditor==1.2
