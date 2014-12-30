@@ -113,8 +113,7 @@ class Base(CachesMixin, DatabasesMixin, PathsMixin, LogsMixin, SecurityMixin,
     CKEDITOR_UPLOAD_PATH = "uploads/"
 
     # Zinnia antispam
-    # Create account in https://mollom.com
-    ZINNIA_SPAM_CHECKER_BACKENDS = ('zinnia_mollom',)
+    ZINNIA_SPAM_CHECKER_BACKENDS = ('zinnia_akismet.akismet',)
 
     CONSTANCE_CONNECTION = {
         'host': 'localhost',
@@ -139,21 +138,12 @@ class Base(CachesMixin, DatabasesMixin, PathsMixin, LogsMixin, SecurityMixin,
         },
     }
 
-    RECAPTCHA_PUBLIC_KEY = opts.get("RECAPTCHA_PUBLIC_KEY",
-                                    "")
-    RECAPTCHA_PRIVATE_KEY = opts.get("RECAPTCHA_PRIVATE_KEY",
-                                     "")
+    RECAPTCHA_PUBLIC_KEY = opts.get("RECAPTCHA_PUBLIC_KEY", "")
+    RECAPTCHA_PRIVATE_KEY = opts.get("RECAPTCHA_PRIVATE_KEY", "")
     RECAPTCHA_USE_SSL = True
 
-    TWITTER_CONSUMER_KEY = opts.get("TWITTER_CONSUMER_KEY",
-                                    "")
-    TWITTER_CONSUMER_SECRET = opts.get("TWITTER_CONSUMER_SECRET",
-                                    "")
-    TWITTER_ACCESS_KEY = opts.get("TWITTER_ACCESS_KEY",
-                                    "")
-    TWITTER_ACCESS_SECRET = opts.get("TWITTER_ACCESS_SECRET",
-                                    "")
-    MOLLOM_PUBLIC_KEY = opts.get("MOLLOM_PUBLIC_KEY",
-                                    "")
-    MOLLOM_PRIVATE_KEY = opts.get("MOLLOM_PRIVATE_KEY",
-                                    "")
+    TWITTER_CONSUMER_KEY = opts.get("TWITTER_CONSUMER_KEY", "")
+    TWITTER_CONSUMER_SECRET = opts.get("TWITTER_CONSUMER_SECRET", "")
+    TWITTER_ACCESS_KEY = opts.get("TWITTER_ACCESS_KEY", "")
+    TWITTER_ACCESS_SECRET = opts.get("TWITTER_ACCESS_SECRET", "")
+    AKISMET_API_KEY = opts.get("AKISMET_API_KEY", "")
