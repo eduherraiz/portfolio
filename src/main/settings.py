@@ -106,15 +106,9 @@ class Base(CachesMixin, DatabasesMixin, PathsMixin, LogsMixin, SecurityMixin,
     SITE_ID = 1
 
     # # Captcha
-    RECAPTCHA_PUBLIC_KEY = opts.get("RECAPTCHA_PUBLIC_KEY",
-                                    "6LdnTNQSAAAAAEE1hF9NIPAsfCjWNKRR_VhuikXj")
-    RECAPTCHA_PRIVATE_KEY = opts.get("RECAPTCHA_PRIVATE_KEY",
-                                     "6LdnTNQSAAAAACJnL88W5iOa1l2tlfqEGc-BBsCG")
 
-    RECAPTCHA_USE_SSL = True
-
-    # EMAIL_FROM = opts.get("EMAIL_FROM", "no-reply@domain.com")
-    # LIST_OF_EMAIL_RECIPIENTS = opts.get("LIST_OF_EMAIL_RECIPIENTS", "myemail@mydomain.com")
+    EMAIL_FROM = opts.get("EMAIL_FROM", "no-reply@domain.com")
+    LIST_OF_EMAIL_RECIPIENTS = opts.get("LIST_OF_EMAIL_RECIPIENTS", "myemail@mydomain.com")
 
     CKEDITOR_UPLOAD_PATH = "uploads/"
 
@@ -129,16 +123,8 @@ class Base(CachesMixin, DatabasesMixin, PathsMixin, LogsMixin, SecurityMixin,
     }
 
     CONSTANCE_CONFIG = {
-        'EMAIL_FROM': ('no-reply@domain.com', u"Email from for the contact form"),
-        'LIST_OF_EMAIL_RECIPIENTS' : ('myemail@mydomain.com', u"Email to for the contact form"),
         'BLOG_NAME' : ("Blog name", u"Blog name"),
         'LOGO' : ( "zinnia_bootstrap/img/zinnia.png", u"Static path for the logo"),
-        'TWITTER_CONSUMER_KEY' : ( "", u"Twitter bot to publish on post (consumer key)"),
-        'TWITTER_CONSUMER_SECRET' : ( "", u"Twitter bot to publish on post (consumer secret)"),
-        'TWITTER_ACCESS_KEY': ( "", u"Twitter bot to publish on post (access key)"),
-        'TWITTER_ACCESS_SECRET' : ( "", u"Twitter bot to publish on post (access secret)"),
-        'MOLLOM_PUBLIC_KEY': ( "", u"Anti-spam mollom.com public key"),
-        'MOLLOM_PRIVATE_KEY': ( "", u"Anti-spam mollom.com private key"),
     }
 
     CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
@@ -153,3 +139,21 @@ class Base(CachesMixin, DatabasesMixin, PathsMixin, LogsMixin, SecurityMixin,
         },
     }
 
+    RECAPTCHA_PUBLIC_KEY = opts.get("RECAPTCHA_PUBLIC_KEY",
+                                    "")
+    RECAPTCHA_PRIVATE_KEY = opts.get("RECAPTCHA_PRIVATE_KEY",
+                                     "")
+    RECAPTCHA_USE_SSL = True
+
+    TWITTER_CONSUMER_KEY = opts.get("TWITTER_CONSUMER_KEY",
+                                    "")
+    TWITTER_CONSUMER_SECRET = opts.get("TWITTER_CONSUMER_SECRET",
+                                    "")
+    TWITTER_ACCESS_KEY = opts.get("TWITTER_ACCESS_KEY",
+                                    "")
+    TWITTER_ACCESS_SECRET = opts.get("TWITTER_ACCESS_SECRET",
+                                    "")
+    MOLLOM_PUBLIC_KEY = opts.get("MOLLOM_PUBLIC_KEY",
+                                    "")
+    MOLLOM_PRIVATE_KEY = opts.get("MOLLOM_PRIVATE_KEY",
+                                    "")
