@@ -113,7 +113,7 @@ class Base(CachesMixin, DatabasesMixin, PathsMixin, LogsMixin, SecurityMixin,
     CKEDITOR_UPLOAD_PATH = "uploads/"
 
     AKISMET_API_KEY = opts.get("AKISMET_API_KEY", "")
-    
+
     # Zinnia antispam
     ZINNIA_SPAM_CHECKER_BACKENDS = (
     'zinnia_akismet.akismet',
@@ -150,3 +150,6 @@ class Base(CachesMixin, DatabasesMixin, PathsMixin, LogsMixin, SecurityMixin,
     TWITTER_CONSUMER_SECRET = opts.get("TWITTER_CONSUMER_SECRET", "")
     TWITTER_ACCESS_KEY = opts.get("TWITTER_ACCESS_KEY", "")
     TWITTER_ACCESS_SECRET = opts.get("TWITTER_ACCESS_SECRET", "")
+
+    ZINNIA_PING_EXTERNAL_URLS = False
+    ZINNIA_SAVE_PING_DIRECTORIES = False
